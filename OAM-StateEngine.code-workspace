@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../OFM-DFA"
+		}
+	],
+	"settings": {
+		"cSpell.language": "en,de,de-DE",
+		"C_Cpp.autoAddFileAssociations": false,
+		"files.associations": {
+			"new": "cpp"
+		}
+	}
+}
