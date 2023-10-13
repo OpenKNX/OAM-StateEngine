@@ -95,7 +95,7 @@
               <op:include href="../../OFM-LogicModule/src/Logikmodul.share.xml" xpath="//Dynamic/Channel/*" prefix="LOG" />
               <op:include href="../../OFM-LogicModule/src/Logikmodul.templ.xml" xpath="//Dynamic/ChannelIndependentBlock/*" type="template" prefix="LOG" />
             </Channel>
-            <Channel Name="DeaKanaele" Text="DEAs" Number="2" Id="%AID%_CH-2">
+            <Channel Name="DeaKanaele" Text="Zustandsmodelle (DEAs)" Number="2" Id="%AID%_CH-2">
               <op:include href="../../OFM-DFA/src/DfaModule.share.xml" xpath="//Dynamic/Channel/*" prefix="DFA" />
               <op:include href="../../OFM-DFA/src/DfaModule.templ.xml" xpath="//Dynamic/ChannelIndependentBlock/*" type="template" prefix="DFA" />
             </Channel>
