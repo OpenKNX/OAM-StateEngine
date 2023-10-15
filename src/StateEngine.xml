@@ -22,7 +22,7 @@
               <!-- TODO new producer versioning -->
             </op:define>
             <op:define prefix="LOG" header="../include/knxprod.h" NumChannels="96" KoOffset="280" ModuleType="1">
-              <op:verify File="../lib/OFM-LogicModule/src/ModuleVersion.h" ModuleVersion="32" />
+              <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="32" />
             </op:define>
             <ParameterTypes>
               <op:include href="../lib/OFM-DFA/src/DfaModule.share.xml"          xpath="//ParameterTypes/ParameterType" prefix="DFA" />
