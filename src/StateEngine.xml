@@ -21,7 +21,7 @@
             <op:define prefix="DFA" header="../include/knxprod.h" NumChannels="32" KoOffset="20" ModuleType="2">
               <!-- TODO new producer versioning -->
             </op:define>
-            <op:define prefix="LOG" header="../include/knxprod.h" NumChannels="96" KoOffset="280" ModuleType="1">
+            <op:define prefix="LOG" header="../include/knxprod.h" NumChannels="96" KoOffset="600" ModuleType="1">
               <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="32" />
             </op:define>
             <ParameterTypes>
