@@ -5,6 +5,15 @@
 		},
 		{
 			"path": "../OFM-DFA"
+		},
+		{
+			"path": "../OFM-LogicModule"
+		},
+		{
+			"path": "../OGM-Common"
+		},
+		{
+			"path": "../knx"
 		}
 	],
 	"settings": {
