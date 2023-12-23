@@ -21,6 +21,17 @@
 		"C_Cpp.autoAddFileAssociations": false,
 		"files.associations": {
 			"new": "cpp"
+		},
+		"workbench.colorCustomizations": {
+			"titleBar.background": "#336",
+			"titleBar.border": "#66f",
+			"titleBar.activeBackground": "#66f",
+			"titleBar.activeForeground": "#fff",
+			"statusBar.background": "#336",
+			"statusBar.foreground": "#fff",
+			"activityBar.background": "#336",
+			"activityBar.activeBackground": "#66f",
+			"activityBar.activeForeground": "#fff",
 		}
 	}
 }
