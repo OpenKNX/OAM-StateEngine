@@ -1,4 +1,5 @@
 **.knxprod
+**/knxprod/
 *.lnk
 .DS_Store
 .pio
