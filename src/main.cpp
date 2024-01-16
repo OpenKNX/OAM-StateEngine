@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-only
-// Copyright (C) 2023 Cornelius Koepp
+// Copyright (C) 2023-2024 Cornelius Koepp
 
 #include "Logic.h"
 #include "DfaModule.h"
@@ -28,7 +28,7 @@ void setup()
     openknx.setup();
 
 #ifdef OPENKNX_DEBUG
-    openknx.progLed.blinking();
+    openknx.progLed.pulsing();
 #endif
 }
 
