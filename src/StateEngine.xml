@@ -20,7 +20,11 @@
   <op:define prefix="BASE" 
             share="../lib/OGM-Common/src/Common.share.xml"
             ModuleType="1" />
-  
+
+  <op:define prefix="UCT"
+             share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml"
+             ModuleType="9" />
+
   <!-- IMPORTANT: NumChannels and %DFA_LOG_NumChannels% must be kept in sync! -->
   <op:define prefix="LOG" 
              share="../lib/OFM-LogicModule/src/Logikmodul.share.xml" 
