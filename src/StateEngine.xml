@@ -2,8 +2,12 @@
 <?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer" >
 
-  <!-- IMPORTANT: NumChannels and %DFA_LOG_NumChannels% must be kept in sync! -->
-  <op:config name="%DFA_LOG_NumChannels%" value="96" />
+  <!-- IMPORTANT: NumChannels and %LOG_NumChannels% must be kept in sync! -->
+  <op:config name="%LOG_NumChannels%"        value="48" />
+  <op:config name="%LOG_NumChannelsDefault%"  value="2" />
+
+  <op:config name="%DFA_NumChannels%"        value="16" />
+  <op:config name="%DFA_NumChannelsDefault%"  value="2" />
 
   <op:ETS ProductName="StateEngine"
           OpenKnxId="0xAC"
@@ -29,7 +33,7 @@
   <op:define prefix="LOG" 
              share="../lib/OFM-LogicModule/src/Logikmodul.share.xml" 
              template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
-             NumChannels="%DFA_LOG_NumChannels%" 
+             NumChannels="%LOG_NumChannels%" 
              KoOffset="600" 
              ModuleType="1" >
     <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="3.1" /> 
@@ -38,7 +42,7 @@
   <op:define prefix="DFA"
              share="../lib/OFM-DFA/src/DfaModule.share.xml"
              template="../lib/OFM-DFA/src/DfaModule.templ.xml"
-             NumChannels="32"
+             NumChannels="%DFA_NumChannels%"
              KoOffset="20"
              ModuleType="2" >
     <op:verify File="../lib/OFM-DFA/library.json" ModuleVersion="0.1" /> 
