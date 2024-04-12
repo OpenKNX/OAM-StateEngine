@@ -38,7 +38,7 @@
              NumChannels="%LOG_NumChannels%" 
              KoOffset="600" 
              ModuleType="10" >
-    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="3.1" />
+    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="3.2" />
   </op:define>
 
   <op:define prefix="DFA"
@@ -47,7 +47,7 @@
              NumChannels="%DFA_NumChannels%"
              KoOffset="20"
              ModuleType="2" >
-    <op:verify File="../lib/OFM-DFA/library.json" ModuleVersion="0.1" /> 
+    <op:verify File="../lib/OFM-DFA/library.json" ModuleVersion="0.2" /> 
   </op:define>
   
   <!-- <generate base="MyApplication.xml" /> -->
