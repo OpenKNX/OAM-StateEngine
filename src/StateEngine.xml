@@ -27,7 +27,9 @@
 
   <op:define prefix="UCT"
              share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml"
-             ModuleType="9" />
+             ModuleType="19">
+    <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="0.1" />
+  </op:define> />
 
   <!-- IMPORTANT: NumChannels and %DFA_LOG_NumChannels% must be kept in sync! -->
   <op:define prefix="LOG" 
