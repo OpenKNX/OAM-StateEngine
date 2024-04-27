@@ -28,7 +28,11 @@ void setup()
     openknx.setup();
 
 #ifdef OPENKNX_DEBUG
-    openknx.progLed.pulsing();
+    #ifdef OKNXHW_REG1_BASE_V1
+        openknx.info1Led.pulsing();
+    #else
+        openknx.progLed.pulsing();
+    #endif
 #endif
 }
 
