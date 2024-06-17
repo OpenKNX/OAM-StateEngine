@@ -2,40 +2,38 @@
 <?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer" >
 
-  <!-- IMPORTANT: NumChannels and %LOG_NumChannels% must be kept in sync! -->
-  <op:config name="%LOG_NumChannels%"        value="48" />
+  <op:config name="%LOG_NumChannels%"        value="96" />
   <op:config name="%LOG_NumChannelsDefault%"  value="2" />
 
-  <op:config name="%DFA_NumChannels%"        value="16" />
+  <op:config name="%DFA_NumChannels%"        value="32" />
   <op:config name="%DFA_NumChannelsDefault%"  value="2" />
 
   <op:ETS ProductName="StateEngine"
           OpenKnxId="0xAC"
-          ApplicationNumber="11"
+          ApplicationNumber="0x0B"
           ApplicationVersion="0.1"
           ReplacesVersions=""
           ApplicationRevision="0"
           ApplicationName="CK-StateEngine"
-          BuildSuffix="-Dev"
-          BuildSuffixText=" (dev)"
-          OrderNumber="CK-StateEngine-DEV"
+          OrderNumber="CK-StateEngine"
   />
 
   <op:define prefix="BASE" 
             share="../lib/OGM-Common/src/Common.share.xml"
-            ModuleType="10" />
-
+            ModuleType="10">
+    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="1.1" />
+  </op:define>
+        
   <op:define prefix="UCT"
              share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml"
              ModuleType="19">
     <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="0.1" />
-  </op:define> />
+  </op:define>
 
-  <!-- IMPORTANT: NumChannels and %DFA_LOG_NumChannels% must be kept in sync! -->
-  <op:define prefix="LOG" 
+  <op:define prefix="LOG"
              share="../lib/OFM-LogicModule/src/Logikmodul.share.xml" 
              template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
-             NumChannels="%LOG_NumChannels%" 
+             NumChannels="%LOG_NumChannels%"
              KoOffset="600" 
              ModuleType="10" >
     <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="3.2" />
@@ -47,7 +45,7 @@
              NumChannels="%DFA_NumChannels%"
              KoOffset="20"
              ModuleType="2" >
-    <op:verify File="../lib/OFM-DFA/library.json" ModuleVersion="0.2" /> 
+    <op:verify File="../lib/OFM-DFA/library.json" ModuleVersion="0.2" />
   </op:define>
   
   <!-- <generate base="MyApplication.xml" /> -->
