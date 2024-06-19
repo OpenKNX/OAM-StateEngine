@@ -40,7 +40,7 @@ Here's a high-level description of what it does:
 param(
   # Set the Git checkout mode
   [ValidateSet("Branch", "Hash")]
-  [string]$GitCheckoutMode= "Branch", # Branch or Hash. Default is Branch
+  [string]$GitCheckoutMode= "Hash", # Branch or Hash. Default is Hash
 
   # Force the script to recreate symbolic links
   [switch]$ForceRecreateSymLinks= $true, # Default is $true
@@ -51,7 +51,11 @@ param(
   # Check for privileges (Windows only)
   [switch]$CheckForDeveloperMode= $true,  # Default is $true
   [switch]$CheckForSymbolicLinkPermissions= $true, # Default is $true
-  [switch]$CheckForAdminOnly= $false # Default is $false
+  [switch]$CheckForAdminOnly= $false, # Default is $false
+
+  # Set the Write-Host message behavior
+  [switch]$Verbose= $false, # Default is $false
+  [switch]$DebugMsg= $false  # Default is $false
 )
 
 # Global Variables
@@ -63,9 +67,7 @@ $Auto_Use_mklink_To_Create_SymLinks = $false # Default is $false
 # Ignore the permissions to create symbolic links with 'New-Item' and use mklink to create symbolic links.
 $Force_Use_mklink_To_Create_SymLinks = $true # Default is $true. If $Auto_Use_mklink_To_Create_SymLinks is $true, this variable is ignored.
 
-# Set the Write-Host message behavior
-[switch]$Verbose= $false # Default is $false
-[switch]$DebugMsg= $false  # Default is $false
+
 
 function Test-Administrator {
   return (([Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole('Administrators')).If($true, $false)
@@ -239,7 +241,17 @@ function ProcessDependencies($DependenciesFile) {
         # Extract the project name from the URL
         $urlParts = $url -split '/'
         $projectNameWithExtension = $urlParts[-1]
-        $projectName = $projectNameWithExtension -split '\.' | Select-Object -First 1
+        # Assuming the project name is the same as the repository name, and considering the possibility of a .git extension to fix a 'dot' in the project name.
+        # Get the index of the last dot in the string (.git)
+        $lastDotPosition = $projectNameWithExtension.LastIndexOf('.')
+        # Check if a dot was found
+        if ($lastDotPosition -ge 0) {
+            # Extract the substring without the last dot
+            $projectName = $projectNameWithExtension.Substring(0, $lastDotPosition)
+        } else {
+            # No dot found, use the entire string as the project name!
+            $projectName = $projectNameWithExtension
+        }
         # Create a custom object for the project
         [PSCustomObject]@{
           "Hash" = $hash
@@ -346,7 +358,7 @@ function CloneRepository($projectFilesGitInfo, $dependedProjects, $CloneDir, $Cl
           }
         }
         if($DoClone) {
-          Invoke-RestMethod -Uri $GitClone -Method Head -ErrorAction Stop;
+          #Invoke-RestMethod -Uri $GitClone -Method Head -ErrorAction Stop;
           if($Verbose) { $GitCmd= "git clone '$($GitClone)' '$($CloneTarget.ToString())'" 
           } else { $GitCmd= "git clone -q '$($GitClone)' '$($CloneTarget.ToString())'" }
           Invoke-Expression $($GitCmd)
@@ -376,7 +388,7 @@ function CloneRepository($projectFilesGitInfo, $dependedProjects, $CloneDir, $Cl
           $GitDir = Join-Path $CloneTarget ".git"
         } else {
           $CloneTarget = Join-Path -Path $CloneDir -ChildPath $dependedProject.ProjectName
-          $GitDir = Join-Path -Path $CloneTarget.TargetPath -ChildPath ".git"
+          $GitDir = Join-Path -Path $CloneTarget -ChildPath ".git"
         }
         
         if($Verbose) { Write-Host "- CloneRepository - $($checkoutTarget) - GitDir: "$GitDir -ForegroundColor Yellow }
@@ -397,8 +409,10 @@ function CloneRepository($projectFilesGitInfo, $dependedProjects, $CloneDir, $Cl
 
         # Let's do the git checkout
         if($Verbose) { 
+          Invoke-Expression "$GitCmd fetch --all"
           Invoke-Expression "$GitCmd $CheckOutMethod $($CheckOutTarget)"
         } else { 
+          Invoke-Expression "$GitCmd fetch --all -q" | Out-Null
           Invoke-Expression "$GitCmd $CheckOutMethod $($CheckOutTarget) -q" | Out-Null
         }
 
@@ -411,7 +425,36 @@ function CloneRepository($projectFilesGitInfo, $dependedProjects, $CloneDir, $Cl
       catch {
         if($Verbose) {
           $checkoutTarget = if ($CloneModeHash) {  "Hash '$($dependedProject.Hash)'" } else { "Branch '$($dependedProject.Branch)'" }
-          Write-Host "- CloneRepository - $($dependedProject.ProjectName) - Checkout Error! Cannot checkout $($checkoutTarget) Checked out."([Char]0x2717) -ForegroundColor DarkYellow }
+          Write-Host "- CloneRepository - $($dependedProject.ProjectName) - Checkout Error! Cannot checkout $($checkoutTarget) Checked out."([Char]0x2717) -ForegroundColor Red }
+      }
+    }
+
+    # Repository exists and the correct branch or hash is already checked out
+    # if freshly cloned or checkout, no action needed but when switched or correct branch was set, we need to pull last changes
+    # if CloneMode Branch, check if the branch is up-to-date
+    if (-not $CloneModeHash)
+    {
+      if($Verbose) { Write-Host "- CloneRepository - Pull: "$dependedProject.ProjectName" - "$dependedProject.URL -ForegroundColor Green }
+      try{
+        if($IsWinEnv){
+          $CloneTarget = Join-Path $CloneDir $dependedProject.ProjectName
+          $GitDir = Join-Path $CloneTarget ".git"
+        } else {
+          $CloneTarget = Join-Path -Path $CloneDir -ChildPath $dependedProject.ProjectName
+          $GitDir = Join-Path -Path $CloneTarget -ChildPath ".git"
+        }
+        
+        $GitCmd = "git --git-dir=""$($GitDir)"" --work-tree=""$($CloneTarget.ToString())"""
+
+        if($Verbose) { 
+          Invoke-Expression "$GitCmd pull --ff-only"
+        } else { 
+          Invoke-Expression "$GitCmd pull --ff-only -q" | Out-Null
+        }
+      }
+      catch {
+        if($Verbose) {
+          Write-Host "- CloneRepository - $($dependedProject.ProjectName) - Pull Error!"([Char]0x2717) -ForegroundColor Red }
       }
     }
   }
