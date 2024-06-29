@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer" >
+
+  <op:config name="%LOG_NumChannels%"        value="24" />
+  <op:config name="%LOG_NumChannelsDefault%"  value="2" />
+
+  <op:config name="%DFA_NumChannels%"         value="8" />
+  <op:config name="%DFA_NumChannelsDefault%"  value="2" />
+
+  <op:ETS ProductName="StateEngine"
+          OpenKnxId="0xAF"
+          ApplicationNumber="167"
+          ApplicationVersion="10.12"
+          ReplacesVersions="6.2 6.15 7.6 7.9 7.10 7.11 7.12 7.13 7.14 7.15 8.0 8.1 8.2 8.3 8.4 8.5 8.6 8.7 8.8 8.9 8.10 8.11 8.12 8.13 8.14 8.15 9.0 9.1 9.2 9.3 9.5 9.7 9.9 9.11 9.12 9.13 9.15 10.0 10.2 10.3 10.4 10.5 10.6 10.7 10.8 10.9 10.10 10.11"
+          ApplicationRevision="0"
+          ApplicationName="CK-StateEngine"
+          BuildSuffix="-Dev-LocalOnly"
+          BuildSuffixText=" (dev, NOT DISTRIBUTE!)"
+          OrderNumber="CK-StateEngine-DEV-NEVER-IMPORT"
+  />
+
+  <op:define prefix="BASE" 
+            share="../lib/OGM-Common/src/Common.share.xml"
+            ModuleType="10">
+    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="1.1" />
+  </op:define>
+
+  <op:define prefix="UCT"
+             share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml"
+             ModuleType="19">
+    <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="0.1" />
+  </op:define>
+
+  <op:define prefix="LOG"
+             share="../lib/OFM-LogicModule/src/Logikmodul.share.xml" 
+             template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
+             NumChannels="%LOG_NumChannels%"
+             KoOffset="600" 
+             ModuleType="10" >
+    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="3.2" />
+  </op:define>
+
+  <op:define prefix="DFA"
+             share="../lib/OFM-DFA/src/DfaModule.share.xml"
+             template="../lib/OFM-DFA/src/DfaModule.templ.xml"
+             NumChannels="%DFA_NumChannels%"
+             KoOffset="20"
+             ModuleType="2" >
+    <op:verify File="../lib/OFM-DFA/library.json" ModuleVersion="0.2" />
+  </op:define>
+  
+  <!-- <generate base="MyApplication.xml" /> -->
+  <generate />
+</KNX>
