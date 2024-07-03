@@ -6,5 +6,5 @@ By Cornelius Köpp 2023-09 -- 2024
 
 # Contents
 * [ConfigTransfer](https://github.com/OpenKNX/OFM-ConfigTransfer) for import/export/copy configuration
-* 96 Channels of [LogicModul](https://github.com/OpenKNX/OFM-LogicModul) for optional Pre-/Post-Processing of Inputs and Outputs, or other functions
+* 96 Channels of [LogicModule](https://github.com/OpenKNX/OFM-LogicModule) for optional Pre-/Post-Processing of Inputs and Outputs, or other functions
 * 32 Channels of **[DFA-Modul](https://github.com/OpenKNX/OFM-DFA) for state-modeling**
