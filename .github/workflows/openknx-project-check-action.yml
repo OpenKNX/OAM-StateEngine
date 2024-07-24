@@ -22,7 +22,7 @@ jobs:
       - name: Unzip OpenKNXproducer and Make Executable
         run: cd OpenKNXproducer && unzip OpenKNXproducer-3.3.4.zip || test -f tools/Linux/OpenKNXproducer && chmod u+x tools/Linux/OpenKNXproducer
       - name: Check OpenKNXproducer
-        run: OpenKNXproducer/tools/Linux/OpenKNXproducer version
+        run: OpenKNXproducer/tools/Linux/OpenKNXproducer version || echo Ignore OpenKNXproducer always returning 1...
 
       - name: Create knxprod (DEV)
         run: OpenKNXproducer/tools/Linux/OpenKNXproducer create --Debug -h include/knxprod.h src/StateEngine
