@@ -1,6 +1,6 @@
-Open #   OpenKNX: OAM-StateEngine *BETA* v0.1 *BETA*
+Open #   OpenKNX: OAM-StateEngine *BETA* v0.2 *BETA*
 +----+   https://github.com/OpenKNX/OAM-StateEngine
-# KNX    Cornelius Köpp (OpenKNX) 2023-09 -- 2024
+# KNX    Cornelius Köpp (OpenKNX) 2023-09 -- 2025
 
 Zustandsmodellierung für KNX mit Deterministischen Endlichen Automaten (DEA), konfigurierbar über ETS
 
@@ -34,7 +34,7 @@ Fertig.
 
 Die enthaltenen Projekte stehen unter freien Software-Lizenzen (Details siehe Repo):
 
-KNX-Stack
+knx (OpenKNX KNX-Stack)
 * GPL-3.0
 * https://github.com/OpenKNX/knx.git
 
@@ -57,6 +57,10 @@ OFM-LogicModule
 OGM-Common
 * GPL-3.0
 * https://github.com/OpenKNX/OGM-Common.git
+
+OGM-HardwareConfig
+* GPL-3.0
+* https://github.com/OpenKNX/OGM-HardwareConfig.git
 
 
 Icons with "openknx" or "ofm-" or "ofa-" in filename were designed individually for this project.

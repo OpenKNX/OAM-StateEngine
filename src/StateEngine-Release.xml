@@ -2,52 +2,71 @@
 <?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer" >
 
-  <op:config name="%LOG_NumChannels%"        value="96" />
-  <op:config name="%LOG_NumChannelsDefault%"  value="2" />
+  <op:config href="StateEngine.conf.xml" />
 
   <op:config name="%DFA_NumChannels%"        value="32" />
-  <op:config name="%DFA_NumChannelsDefault%"  value="2" />
+  <op:config name="%LOG_NumChannels%"        value="96" />
 
   <op:ETS ProductName="StateEngine"
           OpenKnxId="0xAC"
           ApplicationNumber="0x0B"
-          ApplicationVersion="0.1"
-          ReplacesVersions=""
+          ApplicationVersion="0.2"
+          ReplacesVersions="0.1"
           ApplicationRevision="0"
           ApplicationName="CK-StateEngine"
           OrderNumber="CK-StateEngine"
   />
 
+  <!-- 
+  KOs [1,20[
+  -->
   <op:define prefix="BASE" 
             share="../lib/OGM-Common/src/Common.share.xml"
             ModuleType="10">
-    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="1.1" />
+    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="%BASE_VerifyVersion%" />
   </op:define>
-        
+
+  <!-- no KOs -->
   <op:define prefix="UCT"
              share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml"
              ModuleType="19">
-    <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="0.1" />
+    <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="%UCT_VerifyVersion%" />
   </op:define>
 
-  <op:define prefix="LOG"
-             share="../lib/OFM-LogicModule/src/Logikmodul.share.xml" 
-             template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
-             NumChannels="%LOG_NumChannels%"
-             KoOffset="600" 
-             ModuleType="10" >
-    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="3.2" />
-  </op:define>
-
+  <!-- 
+  16 KOs / Channel
+  => 32*16=512 KOs
+  => [20,532[
+  TODO: increase to 30 or at least 20 KOs / Channel for extensions
+  -->
   <op:define prefix="DFA"
              share="../lib/OFM-DFA/src/DfaModule.share.xml"
              template="../lib/OFM-DFA/src/DfaModule.templ.xml"
              NumChannels="%DFA_NumChannels%"
              KoOffset="20"
              ModuleType="2" >
-    <op:verify File="../lib/OFM-DFA/library.json" ModuleVersion="0.2" />
+    <op:verify File="../lib/OFM-DFA/library.json" ModuleVersion="%DFA_VerifyVersion%" />
   </op:define>
-  
+
+  <!-- 
+  unused KOs [532,600[
+  => 2KOs / Channel available
+  -->
+
+  <!--
+  3 KOs / Channel
+  => 96*3=288 KOs
+  => [600,888[
+  -->
+  <op:define prefix="LOG"
+             share="../lib/OFM-LogicModule/src/Logikmodul.share.xml" 
+             template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
+             NumChannels="%LOG_NumChannels%"
+             KoOffset="600" 
+             ModuleType="10" >
+    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="%LOG_VerifyVersion%" />
+  </op:define>
+
   <!-- <generate base="MyApplication.xml" /> -->
   <generate />
 </KNX>

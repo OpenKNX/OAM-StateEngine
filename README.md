@@ -1,10 +1,20 @@
-# OAM-StateEngine
+> # BETA-STATUS!
+>
+> * Es besteht noch eine erhöhte Fehlerwahrscheinlichkeit in selten genutzten Funktionen (siehe [BETA-STATUS-Hinweis Zustandsautomaten](https://github.com/OpenKNX/OFM-DFA#beta-status)
+> * Erwartete zukünftige Änderung der KO-Nummerierung; es wird von der Nutzung von absoluten KO-Referenzen abgeraten, dies sollte jedoch auch nicht mehr erforderlich sein
 
-Define state based behaviour with Deterministic Finite Automaton (DFA) in ETS.
 
-By Cornelius Köpp 2023-09 -- 2024
+# OpenKNX State-Engine (OAM-StateEngine)
 
-# Contents
-* [ConfigTransfer](https://github.com/OpenKNX/OFM-ConfigTransfer) for import/export/copy configuration
-* 96 Channels of [LogicModule](https://github.com/OpenKNX/OFM-LogicModule) for optional Pre-/Post-Processing of Inputs and Outputs, or other functions
-* 32 Channels of **[DFA-Modul](https://github.com/OpenKNX/OFM-DFA) for state-modeling**
+Abbildung von zustandsabhängigem Verhalten in KNX, konfigurierbar über die ETS.
+
+Von Cornelius Köpp 2023-09 -- 2025
+
+# Funktionen / OpenKNX-Module 
+
+| Modul                                                                  | Dokumentation ETS-Applikation                                                                                                                       | Beschreibung                                                                                                                                                                                                                    |
+|------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Konfigurationstansfer](https://github.com/OpenKNX/OFM-ConfigTransfer) | [Applikationsbeschreibung OFM-ConfigTransfer](https://github.com/OpenKNX/OFM-ConfigTransfer/blob/v1/doc/Applikationsbeschreibung-ConfigTransfer.md) | Hilfsmittel zur Konfiguration: Kopieren, Exportieren, Importieren von Beispielen                                                                                                                                                |
+| 32&nbsp;[Zustandsautomaten](https://github.com/OpenKNX/OFM-DFA)        | [Applikationsbeschreibung OFM-DFA](https://github.com/OpenKNX/OFM-DFA/blob/v1/doc/DFA_Applikationsbeschreibung.md)                                  | Universelle Modellierung von zustansbehaftetem Verhalten auf Basis von Determenistischen Endlichen Automaten, mit mehreren Eingängen, Timeout und mehreren Ausgängen                                                            |
+| 96&nbsp;[Logiken](https://github.com/OpenKNX/OFM-LogicModule)          | [Applikationsbeschreibung OFM-LogicModule](https://github.com/OpenKNX/OFM-LogicModule/blob/v1/doc/Applikationsbeschreibung-Logik.md)                | Nützlich zur Vorverarbeitung von Ereignissen, Konvertierung aus verschiedenste DPTs, sowie Nachverarbeitung und weitere Funktionen<br>Hinweis: Logik-Ausgänge können direkt für Eingänge der Automaten verwenden werden |
+
