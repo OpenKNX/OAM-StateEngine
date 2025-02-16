@@ -1,6 +1,6 @@
 > # BETA-STATUS!
 >
-> * Es besteht noch eine erhöhte Fehlerwahrscheinlichkeit in selten genutzten Funktionen (siehe [BETA-STATUS-Hinweis Zustandsautomaten](https://github.com/OpenKNX/OFM-DFA#beta-status)
+> * Es besteht noch eine erhöhte Fehlerwahrscheinlichkeit in selten genutzten Funktionen (siehe [BETA-STATUS-Hinweis Zustandsautomaten](https://github.com/OpenKNX/OFM-DFA#beta-status-)
 > * Erwartete zukünftige Änderung der KO-Nummerierung; es wird von der Nutzung von absoluten KO-Referenzen abgeraten, dies sollte jedoch auch nicht mehr erforderlich sein
 
 
@@ -15,7 +15,7 @@ Von Cornelius Köpp 2023-09 -- 2025
 | Modul                                                                  | Dokumentation ETS-Applikation                                                                                                                       | Beschreibung                                                                                                                                                                                                                    |
 |------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Konfigurationstansfer](https://github.com/OpenKNX/OFM-ConfigTransfer) | [Applikationsbeschreibung OFM-ConfigTransfer](https://github.com/OpenKNX/OFM-ConfigTransfer/blob/v1/doc/Applikationsbeschreibung-ConfigTransfer.md) | Hilfsmittel zur Konfiguration: Kopieren, Exportieren, Importieren von Beispielen                                                                                                                                                |
-| 32&nbsp;[Zustandsautomaten](https://github.com/OpenKNX/OFM-DFA)        | [Applikationsbeschreibung OFM-DFA](https://github.com/OpenKNX/OFM-DFA/blob/v1/doc/DFA_Applikationsbeschreibung.md)                                  | Universelle Modellierung von zustansbehaftetem Verhalten auf Basis von Determenistischen Endlichen Automaten, mit mehreren Eingängen, Timeout und mehreren Ausgängen                                                            |
+| 32&nbsp;[Zustandsautomaten](https://github.com/OpenKNX/OFM-DFA)        | [Applikationsbeschreibung OFM-DFA](https://github.com/OpenKNX/OFM-DFA/blob/beta/doc/DFA_Applikationsbeschreibung.md)                                | Universelle Modellierung von zustansbehaftetem Verhalten auf Basis von Determenistischen Endlichen Automaten, mit mehreren Eingängen, Timeout und mehreren Ausgängen                                                            |
 | 96&nbsp;[Logiken](https://github.com/OpenKNX/OFM-LogicModule)          | [Applikationsbeschreibung OFM-LogicModule](https://github.com/OpenKNX/OFM-LogicModule/blob/v1/doc/Applikationsbeschreibung-Logik.md)                | Nützlich zur Vorverarbeitung von Ereignissen, Konvertierung aus verschiedenste DPTs, sowie Nachverarbeitung und weitere Funktionen<br>Hinweis: Logik-Ausgänge können direkt für Eingänge der Automaten verwenden werden |
 
 
