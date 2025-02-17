@@ -17,10 +17,10 @@ jobs:
           cd restore 
           ./Restore-Dependencies.ps1
 
-      - name: Download OpenKNXproducer 3.3.4 and Verify
-        run: mkdir OpenKNXproducer && cd OpenKNXproducer && echo '662f09fea9c8822e5dce744d12b31f65f1c6f84d24507c6596751c242f79c14aca7f09dc40add8999413eaa1cdd8b84b716836c2a1d5c3b9ce2f6bbdecea3388 *OpenKNXproducer-3.3.4.zip' > OpenKNXproducer.checksum && wget -q https://github.com/OpenKNX/OpenKNXproducer/releases/download/v3.3.4/OpenKNXproducer-3.3.4.zip && sha512sum OpenKNXproducer-3.3.4.zip && sha512sum -c OpenKNXproducer.checksum
+      - name: Download OpenKNXproducer 3.4.1 and Verify
+        run: mkdir OpenKNXproducer && cd OpenKNXproducer && echo '7abaa744bf3d1e317e0c50025959f714277e729cac36ae52c849a14ded0a5a1b8869fcacde4511ad4be7738d42c3cc0f6538a357d46ce8f6d83a7bbbb5ca05d7 *OpenKNXproducer-3.4.1.zip' > OpenKNXproducer.checksum && wget -q https://github.com/OpenKNX/OpenKNXproducer/releases/download/v3.4.1/OpenKNXproducer-3.4.1.zip && sha512sum OpenKNXproducer-3.4.1.zip && sha512sum -c OpenKNXproducer.checksum
       - name: Unzip OpenKNXproducer and Make Executable
-        run: cd OpenKNXproducer && unzip OpenKNXproducer-3.3.4.zip || test -f tools/Linux/OpenKNXproducer && chmod u+x tools/Linux/OpenKNXproducer
+        run: cd OpenKNXproducer && unzip OpenKNXproducer-3.4.1.zip || test -f tools/Linux/OpenKNXproducer && chmod u+x tools/Linux/OpenKNXproducer
       - name: Check OpenKNXproducer
         run: OpenKNXproducer/tools/Linux/OpenKNXproducer version || echo Ignore OpenKNXproducer always returning 1...
 
