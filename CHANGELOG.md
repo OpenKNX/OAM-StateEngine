@@ -1,4 +1,9 @@
-# (Upcoming) 2025-02 Second Beta Release
+# 2025-03-01 First DFA16 Beta with new ApplicationNumber (16xDFA16 + 48xLOG)
+
+* Use DFA reduced to 16 states to prevent frequent excessive programming time (was &gt;6 minutes for 32xDFA32 every 10th time) and reduce 
+* Add Support for *OpenKNXiao Mini* Hardware
+
+# 2025-02 Second Beta Release (32xDFA32 + 96xLOG)
 
 * Update OFM-**DFA** to 0.3.0 (with improvements from first PROD beta-test)
 * Update OFM-**Logic**Module to 3.5.2

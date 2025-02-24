@@ -4,6 +4,7 @@
 
   <op:config href="StateEngine.conf.xml" />
 
+<!--
   <op:config name="%DFA_NumChannels%"        value="32" />
   <op:config name="%LOG_NumChannels%"        value="96" />
 
@@ -15,6 +16,20 @@
           ApplicationRevision="0"
           ApplicationName="CK-StateEngine"
           OrderNumber="CK-StateEngine"
+  />
+-->
+
+  <op:config name="%DFA_NumChannels%"        value="16" />
+  <op:config name="%LOG_NumChannels%"        value="48" />
+
+  <op:ETS ProductName="StateEngineDFA16"
+          OpenKnxId="0xAC"
+          ApplicationNumber="0x0D"
+          ApplicationVersion="0.1"
+          ReplacesVersions="0.0"
+          ApplicationRevision="0"
+          ApplicationName="CK-StateEngineDFA16"
+          OrderNumber="CK-StateEngineDFA16"
   />
 
   <!-- 
@@ -34,38 +49,38 @@
   </op:define>
 
   <!-- 
-  16 KOs / Channel
-  => 32*16=512 KOs
-  => [20,532[
-  TODO: increase to 30 or at least 20 KOs / Channel for extensions
+  30 KOs / Channel
+  => 16*30=480 KOs
+  => [30,510[
   -->
   <op:define prefix="DFA"
              share="../lib/OFM-DFA/src/DfaModule.share.xml"
              template="../lib/OFM-DFA/src/DfaModule.templ.xml"
              NumChannels="%DFA_NumChannels%"
-             KoOffset="20"
+             KoOffset="30"
              ModuleType="2" >
     <op:verify File="../lib/OFM-DFA/library.json" ModuleVersion="%DFA_VerifyVersion%" />
   </op:define>
-
   <!-- 
-  unused KOs [532,600[
-  => 2KOs / Channel available
+  KOs [510,990[ reserved for Channels 17..32
   -->
 
   <!--
   3 KOs / Channel
-  => 96*3=288 KOs
-  => [600,888[
+  => 48*3=144 KOs
+  => [1000,1144[
   -->
   <op:define prefix="LOG"
              share="../lib/OFM-LogicModule/src/Logikmodul.share.xml" 
              template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
              NumChannels="%LOG_NumChannels%"
-             KoOffset="600" 
+             KoOffset="1000" 
              ModuleType="10" >
     <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="%LOG_VerifyVersion%" />
   </op:define>
+  <!-- 
+  KOs [1148,1300[ reserved for other LOG Channels
+  -->
 
   <!-- <generate base="MyApplication.xml" /> -->
   <generate />

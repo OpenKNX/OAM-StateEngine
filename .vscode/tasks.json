@@ -86,11 +86,11 @@
             "group": "test"
         },
         {
-            "label": "Build-Release",
+            "label": "Build-Release (DFA16)",
             "type": "shell",
             "command": "scripts/Build-Release.ps1", 
             "args": [
-                "Release"
+                "DFA16-Release"
             ],
             "problemMatcher": [],
             "group": "test"

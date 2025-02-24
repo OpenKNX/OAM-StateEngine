@@ -4,19 +4,19 @@
 
   <op:config href="StateEngine.conf.xml" />
 
-  <op:config name="%DFA_NumChannels%"         value="8" />
-  <op:config name="%LOG_NumChannels%"        value="24" />
+  <op:config name="%DFA_NumChannels%"        value="16" />
+  <op:config name="%LOG_NumChannels%"        value="48" />
 
-  <op:ETS ProductName="StateEngine"
+  <op:ETS ProductName="StateEngineDFA16"
           OpenKnxId="0xAF"
-          ApplicationNumber="167"
-          ApplicationVersion="11.1"
-          ReplacesVersions="11.0 10.15 10.14 10.13 10.12 10.11 10.10 10.9 10.8 10.7 10.6 10.5 10.4 10.3 10.2 10.0 9.15 9.13 9.12 9.11 9.9 9.7 9.5 9.3 9.2 9.1 9.0 8.15 8.14 8.13 8.12 8.11 8.10 8.9 8.8 8.7 8.6 8.5 8.4 8.3 8.2 8.1 8.0 7.15 7.14 7.13 7.12 7.11 7.10 7.9 7.6 6.15 6.2"
+          ApplicationNumber="169"
+          ApplicationVersion="0.6"
+          ReplacesVersions="0.5 0.4 0.3 0.2 0.1"
           ApplicationRevision="0"
-          ApplicationName="CK-StateEngine"
+          ApplicationName="CK-StateEngineDFA16"
           BuildSuffix="-Dev-LocalOnly"
           BuildSuffixText=" (dev, NOT DISTRIBUTE!)"
-          OrderNumber="CK-dfa-DEV-NOT-USE"
+          OrderNumber="CK-dfa16-DEV-NOT-USE"
   />
 
   <!-- 
@@ -36,38 +36,38 @@
   </op:define>
 
   <!-- 
-  16 KOs / Channel
-  => 32*16=512 KOs (in PROD)
-  => [20,532[
-  TODO: increase to 30 or at least 20 KOs / Channel for extensions
+  30 KOs / Channel
+  => 16*30=480 KOs
+  => [30,510[
   -->
   <op:define prefix="DFA"
              share="../lib/OFM-DFA/src/DfaModule.share.xml"
              template="../lib/OFM-DFA/src/DfaModule.templ.xml"
              NumChannels="%DFA_NumChannels%"
-             KoOffset="20"
+             KoOffset="30"
              ModuleType="2" >
     <op:verify File="../lib/OFM-DFA/library.json" ModuleVersion="%DFA_VerifyVersion%" />
   </op:define>
-
   <!-- 
-  unused KOs [532,600[
-  => 2KOs / Channel available
+  KOs [510,990[ reserved for Channels 17..32
   -->
 
   <!--
   3 KOs / Channel
-  => 96*3=288 KOs (in PROD)
-  => [600,888[
+  => 48*3=288 KOs (in PROD)
+  => [1000,1144[
   -->
   <op:define prefix="LOG"
              share="../lib/OFM-LogicModule/src/Logikmodul.share.xml" 
              template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
              NumChannels="%LOG_NumChannels%"
-             KoOffset="600" 
+             KoOffset="1000" 
              ModuleType="10" >
     <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="%LOG_VerifyVersion%" />
   </op:define>
+  <!-- 
+  KOs [1148,1300[ reserved for other LOG Channels
+  -->
 
   <!-- <generate base="MyApplication.xml" /> -->
   <generate />

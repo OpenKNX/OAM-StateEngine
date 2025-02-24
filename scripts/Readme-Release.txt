@@ -1,4 +1,4 @@
-Open #   OpenKNX: OAM-StateEngine *BETA* v0.2 *BETA*
+Open #   OpenKNX: OAM-StateEngine ***BETA***
 +----+   https://github.com/OpenKNX/OAM-StateEngine
 # KNX    Cornelius Köpp (OpenKNX) 2023-09 -- 2025
 
