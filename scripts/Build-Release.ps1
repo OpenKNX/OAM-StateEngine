@@ -48,6 +48,9 @@ if (!$?) { exit 1 }
 lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG2_PIPICO_V1 firmware-REG2_PIPICO_V1 uf2
 if (!$?) { exit 1 }
 
+# build firmware for OKNXHW_OPENKNXIAO_RP2040_MINI_V1
+lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_XIAO_MINI_V1 firmware-XIAO_MINI_V1 uf2
+if (!$?) { exit 1 }
 
 
 # build firmware for UP1
