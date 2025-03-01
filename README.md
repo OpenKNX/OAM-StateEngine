@@ -30,3 +30,4 @@ Das Release enthält Firmware für nachfolgende RP2040-basierte Geräte mit TP-S
 | [OpenKNX REG1-Base V0](https://github.com/OpenKNX/OpenKNX/wiki/REG1-Base-V0)                 | Abgelöst durch V1, bislang ohne Einschränkungen nutzbar. Wird nicht mehr explizit getestet. |
 | [OpenKNX PiPico-BCU-Connector](https://github.com/OpenKNX/OpenKNX/wiki/PiPico-BCU-Connector) | DEV-Test.                                                                                   |
 | OpenKNX REG2                                                                                 | ungetestet                                                                                  |
+| OpenKNXiao RP2040                                                                            | ungetestet                                                                                  |
