@@ -1,7 +1,6 @@
 > # BETA-STATUS!
 >
 > * Es besteht noch eine erhöhte Fehlerwahrscheinlichkeit in selten genutzten Funktionen (siehe [BETA-STATUS-Hinweis Zustandsautomaten](https://github.com/OpenKNX/OFM-DFA#beta-status-)
-> * Erwartete zukünftige Änderung der KO-Nummerierung; es wird von der Nutzung von absoluten KO-Referenzen abgeraten, dies sollte jedoch auch nicht mehr erforderlich sein
 
 
 # OpenKNX State-Engine (OAM-StateEngine)
@@ -30,4 +29,4 @@ Das Release enthält Firmware für nachfolgende RP2040-basierte Geräte mit TP-S
 | [OpenKNX REG1-Base V0](https://github.com/OpenKNX/OpenKNX/wiki/REG1-Base-V0)                 | Abgelöst durch V1, bislang ohne Einschränkungen nutzbar. Wird nicht mehr explizit getestet. |
 | [OpenKNX PiPico-BCU-Connector](https://github.com/OpenKNX/OpenKNX/wiki/PiPico-BCU-Connector) | DEV-Test.                                                                                   |
 | OpenKNX REG2                                                                                 | ungetestet                                                                                  |
-| OpenKNXiao RP2040                                                                            | ungetestet                                                                                  |
+| OpenKNXiao RP2040                                                                            |                                                                                             |
