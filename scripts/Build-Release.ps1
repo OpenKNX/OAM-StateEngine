@@ -28,6 +28,12 @@
 ../OGM-Common/scripts/setup/reusable/Build-Release-Preprocess.ps1 $args[0]
 if (!$?) { exit 1 }
 
+
+# build firmware based on generated headerfile for ESP32
+../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_XIAO_MINI_ESP32_V1 firmware-XIAO_MINI_ESP32_V1 bin
+if (!$?) { exit 1 }
+
+
 # Note: 
 # * optional param 4 for script name
 # * supported hardware from OpenKNXHardware.h
@@ -49,7 +55,7 @@ lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG2_PIPICO_V1 firm
 if (!$?) { exit 1 }
 
 # build firmware for OKNXHW_OPENKNXIAO_RP2040_MINI_V1
-lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_XIAO_MINI_V1 firmware-XIAO_MINI_V1 uf2
+lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_XIAO_MINI_RP2040_V1 firmware-XIAO_MINI_RP2040_V1 uf2
 if (!$?) { exit 1 }
 
 # build firmware for DEVICE_SMARTMF_1TE_REG
