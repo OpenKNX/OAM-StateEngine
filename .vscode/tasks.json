@@ -119,6 +119,19 @@
             "problemMatcher": [],
             "group": "test",
             "dependsOn": ["git: fetch"]
+        },
+        {
+            "label": "git: pull & restore branches",
+            "type": "shell",
+            "command": "${workspaceFolder}/restore/Restore-Checkout-Branch.ps1",
+            "args": [
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/restore/"
+            },
+            "problemMatcher": [],
+            "group": "test",
+            "dependsOn": ["git: pull"]
         }
 	]
 }
