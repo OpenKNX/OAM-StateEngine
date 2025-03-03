@@ -94,6 +94,31 @@
             ],
             "problemMatcher": [],
             "group": "test"
+        },
+        {
+            "label": "git: fetch",
+            "type": "shell",
+            "command": "git fetch",
+            "args": [
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/"
+            },
+            "problemMatcher": [],
+            "group": "test"
+        },
+        {
+            "label": "git: pull",
+            "type": "shell",
+            "command": "git pull --ff-only",
+            "args": [
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/"
+            },
+            "problemMatcher": [],
+            "group": "test",
+            "dependsOn": ["git: fetch"]
         }
 	]
 }
