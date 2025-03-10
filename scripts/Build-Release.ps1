@@ -52,6 +52,10 @@ if (!$?) { exit 1 }
 lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_XIAO_MINI_V1 firmware-XIAO_MINI_V1 uf2
 if (!$?) { exit 1 }
 
+# build firmware for DEVICE_SMARTMF_1TE_REG
+lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_SMARTMF_1TE_REG firmware-SmartMF-1TE-REG uf2
+if (!$?) { exit 1 }
+
 
 # build firmware for UP1
 # lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_UP1 firmware-UP1 uf2
