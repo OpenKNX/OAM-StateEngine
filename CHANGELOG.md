@@ -1,7 +1,20 @@
+# upcoming v0.3
+
+* Fix #8: Wrong Memory-Layout (16MiB instead of 2MiB) for OpenKNX REG2 PiPico V1, OpenKNXiao Mini V1, SmartMF 1TE REG  
+* Hardware-Support:
+  * Add Device *SmartMF 1TE REG*
+* Dev-Environment
+  * Build-Action to Check Full Project 
+  * Add Tasks for Git-Updates
+* Documentation
+  * Extend Readme
+
+
 # 2025-03-01 First DFA16 Beta with new ApplicationNumber (16xDFA16 + 48xLOG)
 
 * Use DFA reduced to 16 states to prevent frequent excessive programming time (was &gt;6 minutes for 32xDFA32 every 10th time) and reduce 
 * Add Support for *OpenKNXiao Mini* Hardware
+
 
 # 2025-02 Second Beta Release (32xDFA32 + 96xLOG)
 
