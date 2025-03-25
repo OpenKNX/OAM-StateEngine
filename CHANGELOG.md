@@ -1,6 +1,8 @@
 # upcoming v0.3
 
-* Fix #8: Wrong Memory-Layout (16MiB instead of 2MiB) for OpenKNX REG2 PiPico V1, OpenKNXiao Mini V1, SmartMF 1TE REG  
+* Fix #8: Wrong Memory-Layout (16MiB instead of 2MiB) was used for some devices.<br /> Affected Devices:
+  * *OpenKNX REG2 PiPico V1*
+  * *OpenKNXiao Mini V1*
 * Hardware-Support:
   * Add Device *SmartMF 1TE REG*
 * Dev-Environment
