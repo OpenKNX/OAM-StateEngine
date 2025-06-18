@@ -1,8 +1,3 @@
-> # BETA-STATUS!
->
-> * Es besteht noch eine erhöhte Fehlerwahrscheinlichkeit in selten genutzten Funktionen (siehe [BETA-STATUS-Hinweis Zustandsautomaten](https://github.com/OpenKNX/OFM-DFA#beta-status-)
-
-
 # OpenKNX State-Engine (OAM-StateEngine)
 
 Abbildung von zustandsabhängigem Verhalten in KNX, konfigurierbar über die ETS.
