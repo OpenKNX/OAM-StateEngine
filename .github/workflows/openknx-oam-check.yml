@@ -35,7 +35,7 @@ jobs:
         shell: pwsh
         run: |
           cd restore
-          if (${{ inputs.restore_branch }}) {
+          if ("${{ inputs.restore_branch }}" -eq "true") {
             ./Restore-Dependencies-Branch.ps1
           } else {
             ./Restore-Dependencies.ps1
