@@ -1,5 +1,18 @@
-# upcoming v0.3
+# upcoming v0.4
+> **Update-Hinweise:** 
+> 1. Die Geräteadresse (PA) muss erneut zugewiesen werden, da sich das interne Speicherformat im Stack verändert hat.
+> 2. KO-Nummern im Bereich 2 bis 12 haben sich verändert. Ggf. vorhandene interne Referenzen müssen manuell angepasst werde.
 
+* Fixes/Update: OFM-DFA auf 0.5
+  * Behebt Fehler bei Ausgängen mit DPT 8,9,13,14
+  * Details siehe [Changelog](https://github.com/OpenKNX/OFM-DFA/blob/v1dev/CHANGELOG.md)
+* Update OpenKNX(-Module) auf den neuen stabilen Stand 2025-07:
+  * **knx**-Stack auf 2.2 
+  * OGM-**Common** auf 1.4
+  * OFM-**ConfigTransfer** auf 0.4
+  * OFM-**Logic**Module auf 3.7
+  * OFM-**FileTransferModule** auf 0.1.1
+  * OGM-**HardwareConfig** auf Stand 2025-06-25 (6ef296df02c9fdf3d44c82101c9049a4adfc4e11)
 * Fix #8: Wrong Memory-Layout (16MiB instead of 2MiB) was used for some devices.<br /> Affected Devices:
   * *OpenKNX REG2 PiPico V1*
   * *OpenKNXiao Mini V1*
