@@ -66,6 +66,11 @@ if (!$?) { exit 1 }
 # if (!$?) { exit 1 }
 
 
+# build firmware for REG1_BASE_IP
+lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_DEVICE_REG1_BASE_IP firmware-REG1-BASE-IP uf2
+if (!$?) { exit 1 }
+
+
 # build firmware based on generated headerfile for ESP32
 # ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_ESP32 firmware-ESP32 bin
 # if (!$?) { exit 1 }
