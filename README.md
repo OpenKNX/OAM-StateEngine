@@ -27,3 +27,4 @@ Das Release enthält Firmware für nachfolgende RP2040-basierte Geräte mit TP-S
 | OpenKNX REG2                                                                                 | ungetestet                                                                                  |
 | OpenKNXiao RP2040                                                                            |                                                                                             |
 | SmartMF 1TE REG                                                                              |                                                                                             |
+| OpenKNXiao ESP32                                                                             | ungetestet                                                                                  |
