@@ -20,13 +20,13 @@
 -->
 
   <op:config name="%DFA_NumChannels%"        value="16" />
-  <op:config name="%LOG_NumChannels%"        value="48" />
+  <op:config name="%LOG_NumChannels%"        value="99" />
 
   <op:ETS ProductName="StateEngineDFA16"
           OpenKnxId="0xAC"
           ApplicationNumber="0x0D"
-          ApplicationVersion="0.1"
-          ReplacesVersions="0.0"
+          ApplicationVersion="0.4"
+          ReplacesVersions="0.0 0.1 0.3"
           ApplicationRevision="0"
           ApplicationName="CK-StateEngineDFA16"
           OrderNumber="CK-StateEngineDFA16"

@@ -5,18 +5,18 @@
   <op:config href="StateEngine.conf.xml" />
 
   <op:config name="%DFA_NumChannels%"        value="16" />
-  <op:config name="%LOG_NumChannels%"        value="48" />
+  <op:config name="%LOG_NumChannels%"        value="99" />
 
   <op:ETS ProductName="StateEngineDFA16"
-          OpenKnxId="0xAF"
-          ApplicationNumber="169"
-          ApplicationVersion="0.6"
-          ReplacesVersions="0.5 0.4 0.3 0.2 0.1"
+          OpenKnxId="0xAC"
+          ApplicationNumber="0x0E"
+          ApplicationVersion="0.1"
+          ReplacesVersions="0.0"
           ApplicationRevision="0"
           ApplicationName="CK-StateEngineDFA16"
-          BuildSuffix="-Dev-LocalOnly"
-          BuildSuffixText=" (dev, NOT DISTRIBUTE!)"
-          OrderNumber="CK-dfa16-DEV-NOT-USE"
+          BuildSuffix="-Dev"
+          BuildSuffixText=" (dev, NOT USE!)"
+          OrderNumber="CK-dfa16-DEV-NO-PROD"
   />
 
   <!-- 
