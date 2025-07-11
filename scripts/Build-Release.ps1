@@ -71,6 +71,13 @@ if (!$?) { exit 1 }
 # ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_ESP32 firmware-ESP32 bin
 # if (!$?) { exit 1 }
 
+
+# Quick-Fix: Remove unwanted files from release folder:
+Remove-Item -Path "release/data/*.bin" -Exclude "*ESP32*.bin", "*OpenKNX-REG1-Basismodul-IP*" -ErrorAction SilentlyContinue -Force
+Remove-Item -Path "release/OTA-Upload-Firmware-*.ps1" -Exclude "*OpenKNX-REG1-Basismodul-IP*" -ErrorAction SilentlyContinue -Force
+Remove-Item -Path "release/KNX-Upload-Firmware-OpenKNX-REG1-Basismodul-IP.ps1" -ErrorAction SilentlyContinue -Force
+
+
 # execute generic post-build steps
 ../OGM-Common/scripts/setup/reusable/Build-Release-Postprocess.ps1 $args[0]
 if (!$?) { exit 1 }
