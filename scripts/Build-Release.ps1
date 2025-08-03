@@ -29,12 +29,7 @@
 if (!$?) { exit 1 }
 
 
-# build firmware based on generated headerfile for ESP32
-../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_XIAO_MINI_ESP32_V1 firmware-XIAO_MINI_ESP32_V1 bin
-if (!$?) { exit 1 }
-
-
-# Note: 
+# Note:
 # * optional param 4 for script name
 # * supported hardware from OpenKNXHardware.h
 
@@ -62,14 +57,17 @@ if (!$?) { exit 1 }
 lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_SMARTMF_1TE_REG firmware-SmartMF-1TE-REG uf2
 if (!$?) { exit 1 }
 
-
 # build firmware for UP1
 # lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_UP1 firmware-UP1 uf2
 # if (!$?) { exit 1 }
 
+
 # build firmware based on generated headerfile for ESP32
 # ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_ESP32 firmware-ESP32 bin
 # if (!$?) { exit 1 }
+
+../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_XIAO_MINI_ESP32_V1 firmware-XIAO_MINI_ESP32_V1 bin
+if (!$?) { exit 1 }
 
 
 # Quick-Fix: Remove unwanted files from release folder:
