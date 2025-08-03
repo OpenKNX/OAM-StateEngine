@@ -76,7 +76,8 @@ if (!$?) { exit 1 }
 Remove-Item -Path "release/data/*.bin" -Exclude "*ESP32*.bin", "*OpenKNX-REG1-Basismodul-IP*" -ErrorAction SilentlyContinue -Force
 Remove-Item -Path "release/OTA-Upload-Firmware-*.ps1" -Exclude "*OpenKNX-REG1-Basismodul-IP*" -ErrorAction SilentlyContinue -Force
 Remove-Item -Path "release/KNX-Upload-Firmware-OpenKNX-REG1-Basismodul-IP.ps1" -ErrorAction SilentlyContinue -Force
-
+Remove-Item -Path "release/data/OTA-Upload-Firmware-Generic.ps1" -ErrorAction SilentlyContinue -Force
+Remove-Item -Path "release/data/Upload-Firmware-Generic-SAMD.ps1" -ErrorAction SilentlyContinue -Force
 
 # execute generic post-build steps
 ../OGM-Common/scripts/setup/reusable/Build-Release-Postprocess.ps1 $args[0]
