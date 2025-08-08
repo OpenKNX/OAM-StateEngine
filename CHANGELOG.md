@@ -1,9 +1,32 @@
-# Changes
+# Changelog
 
-> *Anmerkung:* Das Versions-Schema weicht vom Konzept der semantischen Versionierung (SemVer) ab!
+> *Anmerkung:* Das Versions-Schema weicht vom Konzept der semantischen Versionierung ([SemVer](https://semver.org/)) ab!
 > Dies ist aufgrund von technischen Limitationen der ETS erforderlich. 
 
-## v0.4: 2025-07-11
+## v0.5: 2025-08-08 (Fix Outputs + OpenKNX Updates)
+
+> **Wichtige Update-Hinweise<!-- für Nutzer der Version v0.1 Public Beta "StateEngineDFA16"-->:**
+> 1. Die Geräteadresse (PA) muss erneut zugewiesen werden, da sich das interne Speicherformat im Stack verändert hat.
+> 2. KO-Nummern im Bereich 2 bis 19 haben sich verändert.
+> 
+>    Ggf. vorhandene interne Referenzen müssen manuell angepasst werde.
+> 
+>    Zur Übersicht siehe Tabelle [Änderung von zentralen Kommunikationsobjekten](#änderung-von-zentralen-kommunikationsobjekten) unten.
+
+* Fix für abweichendes Projekt-Encoding:
+  Bisher wurden Sonderzeichen wie Umlaute fehlerhaft auf dem Bus ausgegeben, 
+  falls das Projekt-Encoding in der ETS auf UTF-8 eingestellt wurde (wie von manchen Herstellern gefordert).
+  Durch explizite Angabe des Encodings für die Applikation mit Nutzung des Producers v3.9 tritt dieses Problem nicht mehr auf. 
+* Fixes für neue Zeitimplementierung / Update auf den neuen stabilen Stand 2025-08 (Ergänzend zu v0.4):
+  * OGM-**Common** auf 1.4.3
+  * OFM-**Logic**Module auf 3.7.1
+  * OGM-**HardwareConfig** auf Stand 2025-08-01 (7dad5ab82a44ab893d6df64f79f39f9d0a76ece2)
+* bereits mit v0.4, Details siehe nachfolgender Abschnitt:
+  * Fixes für verschiedene Ausgangstypen in den Zustandsautotamen, siehe [Changelog OAM-StateEngine](https://github.com/OpenKNX/OFM-DFA/blob/v1/CHANGELOG.md)
+  * Unterstützung weiterer Geräte
+
+## v0.4: 2025-07-11 (kein öffentliches Release)
+
 > **Wichtige Update-Hinweise:** 
 > 1. Die Geräteadresse (PA) muss erneut zugewiesen werden, da sich das interne Speicherformat im Stack verändert hat.
 > 2. KO-Nummern im Bereich 2 bis 19 haben sich verändert. 
@@ -52,7 +75,7 @@
 
 \*: Doppelbelegung der KO-Nummer. Einblendung war abhängig von Konfiguration. 
 
-## 2025-03-01 First DFA16 Beta with new ApplicationNumber (16xDFA16 + 48xLOG)
+## 2025-03-01 First DFA16 Beta with new ApplicationNumber (16xDFA16 + 48xLOG): "StateEngineDFA16 v0.1"
 
 * Use DFA reduced to 16 states to prevent frequent excessive programming time (was &gt;6 minutes for 32xDFA32 every 10th time) and reduce 
 * Add Support for *OpenKNXiao Mini* Hardware

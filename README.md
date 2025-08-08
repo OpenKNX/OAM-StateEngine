@@ -17,7 +17,7 @@ Von Cornelius Köpp 2023-09 -- 2025
 
 # Hardware
 
-Das Release enthält Firmware für nachfolgende RP2040-basierte Geräte mit TP-Schnittstelle:
+Das Release enthält Firmware für nachfolgende RP2040-basierte (sowie experimentell auch ESP32) Geräte mit TP-Schnittstelle:
 
 | Gerät                                                                                        | Kommentar                                                                                   |
 |----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
