@@ -66,7 +66,7 @@ if (!$?) { exit 1 }
 # ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_ESP32 firmware-ESP32 bin
 # if (!$?) { exit 1 }
 
-../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_XIAO_MINI_ESP32_V1 firmware-XIAO_MINI_ESP32_V1 bin
+../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_XIAO_MINI_ESP32_V1 firmware-XIAO_MINI_ESP32_V1 esp32
 if (!$?) { exit 1 }
 
 
