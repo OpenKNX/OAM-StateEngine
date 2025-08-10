@@ -24,6 +24,7 @@
 * bereits mit v0.4, Details siehe nachfolgender Abschnitt:
   * Fixes für verschiedene Ausgangstypen in den Zustandsautotamen, siehe [Changelog OAM-StateEngine](https://github.com/OpenKNX/OFM-DFA/blob/v1/CHANGELOG.md)
   * Unterstützung weiterer Geräte
+* Fix: Processor-Definition für mit v0.4 eingeführte ESP32-Geräte war fehlerhaft in contentx.xml
 
 ## v0.4: 2025-07-11 (kein öffentliches Release)
 
