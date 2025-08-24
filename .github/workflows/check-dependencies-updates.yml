@@ -40,14 +40,7 @@ jobs:
       - name: Check if dependencies.txt changed
         id: check-changes
         run: |
-          diff dependencies.txt dependencies.txt.bak
-          if [ $? -eq 0 ]; then
-            echo "No changes in dependencies.txt"
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            echo "dependencies.txt has been updated"
-            echo "changed=true" >> $GITHUB_OUTPUT
-          fi
+          diff dependencies.txt dependencies.txt.bak || echo "Dependencies were changes => Update detected!"
 
       - name: Commit and push changes
         run: |
