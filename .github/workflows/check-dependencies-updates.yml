@@ -54,5 +54,5 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update dependencies.txt"
-            git push
+            git push --set-upstream origin v1dev--dependencies-latest
           fi          
