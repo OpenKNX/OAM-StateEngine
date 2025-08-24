@@ -1,0 +1,64 @@
+# Check for updates of dependencies in OpenKNX OAM
+# SPDX-License-Identifier: AGPL-3.0-only
+# Copyright (C) 2025 Cornelius Koepp
+
+name: Dependencies-update-check
+run-name: Check for Update of Referenced Dependencies
+
+on:
+  schedule:
+    - cron: '47 17 * * *' # Runs every day at 17:47
+  push:
+    branches:
+      - v1dev
+  workflow_dispatch:
+
+jobs:
+  dependencies-update-check:
+    runs-on: ubuntu-latest
+
+    name: Check for Update of Referenced Dependencies
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Backup dependencies.txt
+        run: |
+          cp -av dependencies.txt dependencies.txt.bak
+
+      - name: Restore Project
+        shell: pwsh
+        run: |
+          cd restore
+          ./Restore-Dependencies-Branch.ps1
+
+      - name: Generate Dependencies.txt
+        shell: pwsh
+        run: |
+          lib/OGM-Common/scripts/setup/reusable/Build-Dependencies.ps1
+
+      - name: Check if dependencies.txt changed
+        id: check-changes
+        run: |
+          diff dependencies.txt dependencies.txt.bak
+          if [ $? -eq 0 ]; then
+            echo "No changes in dependencies.txt"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "dependencies.txt has been updated"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git checkout -b v1dev--dependencies-latest
+          git checkout v1dev--dependencies-latest
+          git add dependencies.txt
+         
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update dependencies.txt"
+            git push
+          fi          
