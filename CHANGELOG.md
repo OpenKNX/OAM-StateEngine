@@ -1,7 +1,14 @@
 # Changelog
 
 > *Anmerkung:* Das Versions-Schema weicht vom Konzept der semantischen Versionierung ([SemVer](https://semver.org/)) ab!
-> Dies ist aufgrund von technischen Limitationen der ETS erforderlich. 
+> Dies ist aufgrund von technischen Limitationen der ETS erforderlich.
+
+## ucoming v0.6
+
+* Anpassung der Firmware-Bezeichnung an Benennung in OGM-HardwareConfig 
+* Update OpenKNX-Module
+  * OFM-DFA auf 0.6
+
 
 ## v0.5: 2025-08-08 (Fix Outputs + OpenKNX Updates)
 
