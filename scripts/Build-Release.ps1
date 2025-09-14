@@ -34,23 +34,23 @@ if (!$?) { exit 1 }
 # * supported hardware from OpenKNXHardware.h
 
 # build firmware for PiPico-BCU-Connector
-lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_PiPico_BCU_Connector firmware-PiPico_BCU_Connector uf2
+lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_PiPico_BCU_Connector firmware-OpenKNX-PiPico-BCU-Connector uf2
 if (!$?) { exit 1 }
 
 # build firmware for REG1_BASE_V0
-lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_BASE_V0 firmware-REG1_BASE_V0 uf2
+lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_BASE_V0 firmware-OpenKNX-REG1-Base-V0 uf2
 if (!$?) { exit 1 }
 
 # build firmware for REG1_BASE_V1
-lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_BASE_V1 firmware-REG1_BASE_V1 uf2
+lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_BASE_V1 firmware-OpenKNX-REG1-Base uf2
 if (!$?) { exit 1 }
 
 # build firmware for OKNXHW_REG2_PIPICO_V1
-lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG2_PIPICO_V1 firmware-REG2_PIPICO_V1 uf2
+lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG2_PIPICO_V1 firmware-OpenKNX-REG2-PIPICO-V1 uf2
 if (!$?) { exit 1 }
 
 # build firmware for OKNXHW_OPENKNXIAO_RP2040_MINI_V1
-lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_XIAO_MINI_RP2040_V1 firmware-XIAO_MINI_RP2040_V1 uf2
+lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_XIAO_MINI_RP2040_V1 firmware-OpenKNX-OpenKNXiao-V1-Mini-RP2040 uf2
 if (!$?) { exit 1 }
 
 # build firmware for DEVICE_SMARTMF_1TE_REG
@@ -66,7 +66,7 @@ if (!$?) { exit 1 }
 # ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_ESP32 firmware-ESP32 bin
 # if (!$?) { exit 1 }
 
-../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_XIAO_MINI_ESP32_V1 firmware-XIAO_MINI_ESP32_V1 esp32
+../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_XIAO_MINI_ESP32_V1 firmware-OpenKNX-OpenKNXiao-V1-Mini-ESP32 esp32
 if (!$?) { exit 1 }
 
 
