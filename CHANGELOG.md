@@ -3,11 +3,25 @@
 > *Anmerkung:* Das Versions-Schema weicht vom Konzept der semantischen Versionierung ([SemVer](https://semver.org/)) ab!
 > Dies ist aufgrund von technischen Limitationen der ETS erforderlich.
 
-## ucoming v0.6
+## v0.6: 2025-09-18 (Fixes + Improvements)
 
+> Wichtige Update-Hinweise **für Nutzer der Version v0.1 Public Beta "StateEngineDFA16"**:
+> 
+> Wie bereits für v0.5: 
+>> 1. Die Geräteadresse (PA) muss erneut zugewiesen werden, da sich das interne Speicherformat im Stack verändert hat.
+>> 2. KO-Nummern im Bereich 2 bis 19 haben sich verändert.
+     >
+     >    Ggf. vorhandene interne Referenzen müssen manuell angepasst werde.
+     >
+     >    Zur Übersicht siehe Tabelle [Änderung von zentralen Kommunikationsobjekten](#änderung-von-zentralen-kommunikationsobjekten) unten.
+
+* Siehe auch Einträge zu v0.5 und v0.4 (diese wurden nicht öffentlich bereitgstellt)
 * Anpassung der Firmware-Bezeichnung an Benennung in OGM-HardwareConfig 
-* Update OpenKNX-Module
-  * OFM-DFA auf 0.6
+* Update OpenKNX-Module zur Behebung kleinerer Fehler
+  * **knx** auf 2.2.1
+  * OFM-**DFA** auf 0.6
+  * OFM-**LogicModule** auf 3.7.2
+* Verlängerte `OPENKNX_LOOPTIME_WARNING` zur Reduktion von Warn-Ausgaben auf der Konsole 
 
 
 ## v0.5: 2025-08-08 (Fix Outputs + OpenKNX Updates)
