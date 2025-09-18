@@ -46,7 +46,7 @@ lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_BASE_V1 firmwa
 if (!$?) { exit 1 }
 
 # build firmware for OKNXHW_REG2_PIPICO_V1
-lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG2_PIPICO_V1 firmware-OpenKNX-REG2-PIPICO-V1 uf2
+lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG2_PIPICO_V1 firmware-OpenKNX-REG2-PiPico-V1 uf2
 if (!$?) { exit 1 }
 
 # build firmware for OKNXHW_OPENKNXIAO_RP2040_MINI_V1
