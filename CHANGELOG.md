@@ -16,8 +16,12 @@
      >    Zur Übersicht siehe Tabelle [Änderung von zentralen Kommunikationsobjekten](#änderung-von-zentralen-kommunikationsobjekten) unten.
 
 * Siehe auch Einträge zu v0.5 und v0.4 (diese wurden nicht öffentlich bereitgstellt)
-* Anpassung der Firmware-Bezeichnung an Benennung in OGM-HardwareConfig 
-* Update OpenKNX-Module zur Behebung kleinerer Fehler
+* Anpassung der Firmware-Bezeichnung an Benennung in OGM-HardwareConfig
+* Unterstützung von Status-Anzeige per LED3 für neue Zeitimplementierung für REG1-Base.<br />
+  Die Firmware wird in zwei Varianten bereitstellt:
+  * `firmware-OpenKNX-REG1-Base___time-led3` - mit dauerhaft blinkender LED bei bekannter Zeit
+  * `firmware-OpenKNX-REG1-Base___no-time-led` - ohne LED für Zeit
+* Update OpenKNX-Module zur Behebung verschiedener kleinerer Fehler
   * **knx** auf 2.2.1
   * OFM-**DFA** auf 0.6
   * OFM-**LogicModule** auf 3.7.2
