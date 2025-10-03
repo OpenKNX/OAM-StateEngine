@@ -3,6 +3,7 @@
 **/knxprod/
 *.lnk
 .DS_Store
+/____*/
 /.idea/
 /.pio
 /.vscode/.browse.c_cpp.db*
