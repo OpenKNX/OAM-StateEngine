@@ -10,4 +10,7 @@
   <op:config name="%DFA_VerifyVersion%"  value="0.6" />
   <op:config name="%LOG_VerifyVersion%"  value="3.7" />
 
+  <!-- hide module sync buttons, as there is no hardware dependent feature in state-engine -->
+  <op:config name="%BASE_ShowSyncModulesButton%"        value="0" />
+
 </KNX>
