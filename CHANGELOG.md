@@ -3,6 +3,31 @@
 > *Anmerkung:* Das Versions-Schema weicht vom Konzept der semantischen Versionierung ([SemVer](https://semver.org/)) ab!
 > Dies ist aufgrund von technischen Limitationen der ETS erforderlich.
 
+
+## v0.7: 2025-11-02 (Bedingte Zustände + OpenKNX Updates)
+
+> Wichtige Update-Hinweise **für Nutzer der Version v0.1 Public Beta "StateEngineDFA16"**:
+>
+> Wie bereits für v0.5 und v0.6:
+>> 1. Die Geräteadresse (PA) muss erneut zugewiesen werden, da sich das interne Speicherformat im Stack verändert hat.
+>> 2. KO-Nummern im Bereich 2 bis 19 haben sich verändert.
+>>    Ggf. vorhandene interne Referenzen müssen manuell angepasst werde.
+>>    Zur Übersicht siehe Tabelle [Änderung von zentralen Kommunikationsobjekten](#änderung-von-zentralen-kommunikationsobjekten) unten.
+
+* Update OFM-**DFA** auf 0.7 mit u.A.:
+  * Feature (Umfangreiche Funktionserweiterung): **Bedingte Zustände**
+  * Feature: Direktes Auslösen von Timeouts über KO
+  * Diverse Detail-Verbesserungen in der ETS-App und Kommandos für Diagnose.
+* Update anderer OpenKNX-Module:
+  * **knx** auf 2.2.2
+  * OGM-**Common** auf 1.5.1
+    * Hinweis: Synchronisation von Modul-Support wurde deaktiviert, da keine hardwareabhängigkeit vorhanden
+  * OFM-**LogicModule** auf 3.7.3
+  * OFM-**FileTransfer**Module auf 0.1.4
+  * OGM-HardwareConfig auf Stand 2025-10-24
+* Update auf OpenKNXproducer 3.12.2 mit Anpassung Versionskonfiguration
+
+
 ## v0.6: 2025-09-18 (Fixes + Improvements)
 
 > Wichtige Update-Hinweise **für Nutzer der Version v0.1 Public Beta "StateEngineDFA16"**:
@@ -10,10 +35,8 @@
 > Wie bereits für v0.5: 
 >> 1. Die Geräteadresse (PA) muss erneut zugewiesen werden, da sich das interne Speicherformat im Stack verändert hat.
 >> 2. KO-Nummern im Bereich 2 bis 19 haben sich verändert.
-     >
-     >    Ggf. vorhandene interne Referenzen müssen manuell angepasst werde.
-     >
-     >    Zur Übersicht siehe Tabelle [Änderung von zentralen Kommunikationsobjekten](#änderung-von-zentralen-kommunikationsobjekten) unten.
+>>    Ggf. vorhandene interne Referenzen müssen manuell angepasst werde.
+>>    Zur Übersicht siehe Tabelle [Änderung von zentralen Kommunikationsobjekten](#änderung-von-zentralen-kommunikationsobjekten) unten.
 
 * Siehe auch Einträge zu v0.5 und v0.4 (diese wurden nicht öffentlich bereitgstellt)
 * Anpassung der Firmware-Bezeichnung an Benennung in OGM-HardwareConfig
