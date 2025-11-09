@@ -4,7 +4,22 @@
 > Dies ist aufgrund von technischen Limitationen der ETS erforderlich.
 
 
-## v0.7: 2025-11-02 (Bedingte Zustände + OpenKNX Updates)
+## v0.7.1: 2025-11-09 (Bedingte Zustände + Updates + FAQs)
+
+> Wichtige Update-Hinweise **für Nutzer der Version v0.1 Public Beta "StateEngineDFA16"**:
+>
+> Wie bereits für v0.5, v0.6 und v0.7:
+>> 1. Die Geräteadresse (PA) muss erneut zugewiesen werden, da sich das interne Speicherformat im Stack verändert hat.
+>> 2. KO-Nummern im Bereich 2 bis 19 haben sich verändert.
+      >>    Ggf. vorhandene interne Referenzen müssen manuell angepasst werde.
+      >>    Zur Übersicht siehe Tabelle [Änderung von zentralen Kommunikationsobjekten](#änderung-von-zentralen-kommunikationsobjekten) unten.
+
+* Update OFM-**DFA** auf Fix-Version 0.7.1:
+  * Fix: Kommando-Verarbeitung `history` und `*TEST*`
+  * Refactor: Kommando-Vorverarbeitung
+
+
+## v0.7.0: 2025-11-02 (Bedingte Zustände + OpenKNX Updates)
 
 > Wichtige Update-Hinweise **für Nutzer der Version v0.1 Public Beta "StateEngineDFA16"**:
 >
