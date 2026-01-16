@@ -4,19 +4,39 @@
   "oam": {
     "name": "OAM-StateEngine",
     "title": "StateEngineDFA16",
-    "icon": "ofm-dfa@.",
     "description": "Abbildung von zustandsabhängigem Verhalten in KNX, konfigurierbar über die ETS.",
-    "ref_ofm": "OFM-DFA",
-    "others": {
-      "OAM-RaumController": "Enthält weniger Zustandsautomaten, aber eie große Auwahl an weiteren OpenKNX-Modulen."
+    "apps": {
+      "src/StateEngine-DFA16-Release.xml": {
+        "name": "Release",
+        "is_release": true
+      }
+    },
+    "devices": {
+      "REG1-Base": {
+        "note": "Empfohlen für Dauereinsatz. PROD-Test erfolgt auf dieser Basis. Firmware liegt in zwei varianten vor: Mit und ohne Blinken für die Zeit."
+      },
+      "REG1-Base-V0": {
+        "note": "Abgelöst durch V1, bislang ohne Einschränkungen nutzbar. Wird nicht mehr explizit getestet."
+      },
+      "PiPico-BCU-Connector": {
+        "note": "Entwicklungsplattform"
+      },
+      "REG2-PP-V1": {
+        "note": "ungetestet"
+      },
+      "OKNXIAO-V10-Mini-2040": {
+      },
+      "OKNXIAO-V10-Mini-ESP32S3": {
+        "note": "ungetestet"
+      },
+      "SMARTMF-1TE-REG": {
+      }
+    },
+    "related_oam_notes": {
+      "OAM-RaumController": "Enthält weniger Zustandsautomaten, aber eine große Auswahl an weiteren OpenKNX-Modulen.",
+      "BEM-GardenControl": "Nur für Bewässerungssteuerung."
     },
     "kuf_url": "https://knx-user-forum.de/forum/projektforen/openknx/2024474-openknx-stateengine-universelle-zustandsautomaten-in-knx",
-    /*
-    "doc_ets_app": "doc/DFA_Applikationsbeschreibung.md",
-    */
-    /*
-    "img_teaser": "doc/Beispiel1_VirtuellerAktor/DFA_Beispiel1_VSA_table.png",
-    */
     "type": "universal-logic"
   }
 }
