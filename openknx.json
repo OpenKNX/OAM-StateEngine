@@ -1,0 +1,22 @@
+{
+  "OpenKnxContentType": "OpenKNX/Repo/Info",
+  "OpenKnxFormatVersion": "v0.1.0",
+  "oam": {
+    "name": "OAM-StateEngine",
+    "title": "StateEngineDFA16",
+    "icon": "ofm-dfa@.",
+    "description": "Abbildung von zustandsabhängigem Verhalten in KNX, konfigurierbar über die ETS.",
+    "ref_ofm": "OFM-DFA",
+    "others": {
+      "OAM-RaumController": "Enthält weniger Zustandsautomaten, aber eie große Auwahl an weiteren OpenKNX-Modulen."
+    },
+    "kuf_url": "https://knx-user-forum.de/forum/projektforen/openknx/2024474-openknx-stateengine-universelle-zustandsautomaten-in-knx",
+    /*
+    "doc_ets_app": "doc/DFA_Applikationsbeschreibung.md",
+    */
+    /*
+    "img_teaser": "doc/Beispiel1_VirtuellerAktor/DFA_Beispiel1_VSA_table.png",
+    */
+    "type": "universal-logic"
+  }
+}
