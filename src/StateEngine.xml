@@ -10,7 +10,7 @@
   <op:ETS ProductName="StateEngineDFA16"
           OpenKnxId="0xAC"
           ApplicationNumber="0x0E"
-          ApplicationVersion="0.1"
+          ApplicationVersion="0.1.0"
           ReplacesVersions="0.0"
           ApplicationRevision="0"
           ApplicationName="CK-StateEngineDFA16"
