@@ -4,6 +4,41 @@
 > Dies ist aufgrund von technischen Limitationen der ETS erforderlich.
 
 
+## v0.8.0: 2026-03-12 (Bedingter Start-Zustand + OpenKNX Updates) 
+
+> Wichtige Update-Hinweise **nur für Nutzer der Version v0.1** Public Beta "StateEngineDFA16"
+>
+> Wie bereits für v0.5, v0.6 und v0.7.x:
+>> 1. Die Geräteadresse (PA) muss erneut zugewiesen werden, da sich das interne Speicherformat im Stack verändert hat.
+>> 2. KO-Nummern im Bereich 2 bis 19 haben sich verändert.
+>>    Ggf. vorhandene interne Referenzen müssen manuell angepasst werde.
+>>    Zur Übersicht siehe Tabelle [Änderung von zentralen Kommunikationsobjekten](#änderung-von-zentralen-kommunikationsobjekten) unten.
+
+> Update Hinweis für Nutzer mit **OpenKNX REG1-Base und Version v0.6 und v0.7.x**
+> 
+> Die Unterscheidung in verschiedene Firmware-Versionen entfällt, 
+> da die Zeit-Status-Anzeige nun per ETS konfiguriert werden kann.
+> Beide Verhaltensweisen können jetzt über die einheitliche Firmware `OpenKNX-REG1-Base` dargestellt werden.
+> Ausgehend von der alten Firmware wird folgendes Vorgehen zur Migration empfohlen:
+> * `firmware-OpenKNX-REG1-Base___no-time-led` - hier ist *keine* gesonderte Konfiguration erforderlich
+> * `firmware-OpenKNX-REG1-Base___time-led3` - Auswahl der Funktion **Zeitstatus** in der ETS-Applikation unter OpenKNX / Info LEDs / LED "Info {1,2,3}". 
+
+* **Wichtig:** Update auf OpenKNXproducer 4.0.1 erforderlich
+* Update OFM-**DFA** auf 0.8 (von 0.7.1; [Changes](https://github.com/OpenKNX/OFM-DFA/blob/v1/CHANGELOG.md))
+  * Neues Feature: Starten mit bedingtem Zustandsübergang (als Option)
+  * Update: KO-Bezeichner (Name und Objektfunktion) entsprechend neuer einheitlicher Konventionen für OpenKNX-Module
+* Update anderer OpenKNX-Module:
+  * **knx** (Stack) auf 2.3.0
+  * OGM-**Common** auf 1.7.2 (von 1.5.1; [Changes](https://github.com/OpenKNX/OGM-Common/blob/v1/CHANGELOG.md#172-2026-03-02))
+    * Neues Feature: Status-LEDs-Konfiguration 
+    * Hinweis: Synchronisation von Modul-Support bleibt deaktiviert, da keine hardwareabhängigkeit vorhanden
+  * OFM-**ConfigTransfer** auf 0.5 (von 0.4; [Changelog](https://github.com/OpenKNX/OFM-ConfigTransfer/blob/v1/CHANGELOG.md#050-log-patches-2026-02-24))
+  * OFM-**LogicModule** auf 4.0.1 (von 3.7.3; [Änderungshistorie](https://github.com/OpenKNX/OFM-LogicModule/blob/v1/doc/Applikationsbeschreibung-Logik.md#%C3%A4nderungshistorie))
+    * Neues Feature: Steuerung von Status-LEDs
+  * OFM-**FileTransfer**Module auf 0.1.5
+  * OGM-HardwareConfig auf Stand 2026-02-23
+
+
 ## v0.7.1: 2025-11-09 (Bedingte Zustände + Updates + FAQs)
 
 > Wichtige Update-Hinweise **für Nutzer der Version v0.1 Public Beta "StateEngineDFA16"**:
@@ -11,8 +46,8 @@
 > Wie bereits für v0.5, v0.6 und v0.7:
 >> 1. Die Geräteadresse (PA) muss erneut zugewiesen werden, da sich das interne Speicherformat im Stack verändert hat.
 >> 2. KO-Nummern im Bereich 2 bis 19 haben sich verändert.
-      >>    Ggf. vorhandene interne Referenzen müssen manuell angepasst werde.
-      >>    Zur Übersicht siehe Tabelle [Änderung von zentralen Kommunikationsobjekten](#änderung-von-zentralen-kommunikationsobjekten) unten.
+>>    Ggf. vorhandene interne Referenzen müssen manuell angepasst werde.
+>>    Zur Übersicht siehe Tabelle [Änderung von zentralen Kommunikationsobjekten](#änderung-von-zentralen-kommunikationsobjekten) unten.
 
 * Update OFM-**DFA** auf Fix-Version 0.7.1:
   * Fix: Kommando-Verarbeitung `history` und `*TEST*`

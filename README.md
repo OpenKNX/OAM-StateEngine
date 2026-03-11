@@ -2,7 +2,7 @@
 
 Abbildung von zustandsabhängigem Verhalten in KNX, konfigurierbar über die ETS.
 
-Von Cornelius Köpp 2023-09 -- 2025
+Von Cornelius Köpp 2023 -- 2026
 
 # Funktionen / OpenKNX-Module 
 
