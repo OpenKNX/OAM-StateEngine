@@ -22,8 +22,8 @@ jobs:
 
     uses: openknx/actions/.github/workflows/openknx-oam-check.yml@v0
     with:
-      # oam: OAM-StateEngine
-      # oam_ref: ${{ github.ref_name }}
+      # oam: use this repo as default --> OAM-StateEngine
+      # oam_ref: use current branch as default -> ${{ github.ref_name }}
       restore_branch: ${{ matrix.restore_branch }}
       target: ${{ matrix.target }}
       KNXPROD_PREFIX: StateEngine
