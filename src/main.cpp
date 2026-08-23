@@ -28,9 +28,9 @@ void setup()
 
 #ifdef OPENKNX_DEBUG
     #ifdef OKNXHW_REG1_BASE_V1
-        openknx.info1Led.pulsing();
+        openknx.leds.getLed(OpenKNX::Led::LedType::LED_TYPE_INFO1)->pulsing();
     #else
-        openknx.progLed.pulsing();
+        openknx.leds.getLed(OpenKNX::Led::LedType::LED_TYPE_PROG)->pulsing();
     #endif
 #endif
 }

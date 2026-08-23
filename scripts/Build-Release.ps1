@@ -41,12 +41,8 @@ if (!$?) { exit 1 }
 lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_BASE_V0 firmware-OpenKNX-REG1-Base-V0 uf2
 if (!$?) { exit 1 }
 
-# build firmware for REG1_BASE_V1 (with LED3 for time)
-lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_BASE_V1 firmware-OpenKNX-REG1-Base___time-led3 uf2
-if (!$?) { exit 1 }
-
-# build firmware for REG1_BASE_V1 (without blinking)
-lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_BASE_V1_noblink firmware-OpenKNX-REG1-Base___no-time-led uf2
+# build firmware for REG1_BASE_V1
+lib/OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_BASE_V1 firmware-OpenKNX-REG1-Base uf2
 if (!$?) { exit 1 }
 
 # build firmware for OKNXHW_REG2_PIPICO_V1

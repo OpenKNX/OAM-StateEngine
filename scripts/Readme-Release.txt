@@ -1,6 +1,6 @@
 Open #   OpenKNX: OAM-StateEngine
 +----+   https://github.com/OpenKNX/OAM-StateEngine
-# KNX    Cornelius Köpp (OpenKNX) 2023--2025
+# KNX    Cornelius Köpp (OpenKNX) 2023--2026
 
 Zustandsmodellierung für KNX mit Deterministischen Endlichen Automaten (DEA), konfigurierbar über ETS
 
