@@ -67,8 +67,8 @@
 
   <!--
   3 KOs / Channel
-  => 48*3=144 KOs
-  => [1000,1144[
+  => 99*3=197 KOs
+  => [1000,1197[
   -->
   <op:define prefix="LOG"
              share="../lib/OFM-LogicModule/src/Logikmodul.share.xml" 

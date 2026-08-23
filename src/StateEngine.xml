@@ -54,8 +54,8 @@
 
   <!--
   3 KOs / Channel
-  => 48*3=288 KOs (in PROD)
-  => [1000,1144[
+  => 99*3=197 KOs (in PROD)
+  => [1000,1300[
   -->
   <op:define prefix="LOG"
              share="../lib/OFM-LogicModule/src/Logikmodul.share.xml" 
@@ -66,7 +66,6 @@
     <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="%LOG_VerifyVersion%" />
   </op:define>
   <!-- 
-  KOs [1148,1300[ reserved for other LOG Channels
   -->
 
   <!-- <generate base="MyApplication.xml" /> -->
