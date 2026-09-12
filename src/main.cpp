@@ -1,8 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-only
-// Copyright (C) 2023-2025 Cornelius Koepp
+// Copyright (C) 2023-2026 Cornelius Koepp
 
 #include "Logic.h"
 #include "DfaModule.h"
+#include "FunctionBlocksModule.h"
+#include "VirtualButtonModule.h"
+#include "GpioBinaryInputModule.h"
 #ifdef ARDUINO_ARCH_RP2040
     #include "FileTransferModule.h"
     // TODO check later inclusion of NetworkModule & UsbExchangeModule for KNX_IP_GENERIC
@@ -19,6 +22,11 @@ void setup()
 
     openknx.addModule(1, openknxLogic);
     openknx.addModule(2, openknxDfaModule);
+    openknx.addModule(3, openknxFunctionBlocksModule);
+    openknx.addModule(4, openknxVirtualButtonModule);
+#if defined(OPENKNX_BI_GPIO_PINS) && OPENKNX_BI_GPIO_COUNT > 0 && BI_ChannelCount > 0    
+    openknx.addModule(5, openknxGpioBinaryInputModule);
+#endif
 #ifdef ARDUINO_ARCH_RP2040
     openknx.addModule(9, openknxFileTransferModule);
     // TODO check later inclusion of NetworkModule & UsbExchangeModule for KNX_IP_GENERIC

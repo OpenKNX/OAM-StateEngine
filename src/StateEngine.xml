@@ -5,24 +5,27 @@
   <op:config href="StateEngine.conf.xml" />
 
   <op:config name="%DFA_NumChannels%"        value="16" />
+  <op:config name="%FCB_NumChannels%"        value="24" />
   <op:config name="%LOG_NumChannels%"        value="99" />
+  <op:config name="%BI_NumChannels%"         value="8"  />
+  <op:config name="%BTN_NumChannels%"        value="16" />
 
   <op:ETS ProductName="StateEngineDFA16"
           OpenKnxId="0xAC"
           ApplicationNumber="0x0E"
-          ApplicationVersion="0.1.0"
-          ReplacesVersions="0.0"
+          ApplicationVersion="0.2.0"
           ApplicationRevision="0"
+          ReplacesVersionsDownTo="0.1"
           ApplicationName="CK-StateEngineDFA16"
           BuildSuffix="-Dev"
           BuildSuffixText=" (dev, NOT USE!)"
           OrderNumber="CK-dfa16-DEV-NO-PROD"
   />
 
-  <!-- 
+  <!--
   KOs [1,20[
   -->
-  <op:define prefix="BASE" 
+  <op:define prefix="BASE"
             share="../lib/OGM-Common/src/Common.share.xml"
             ModuleType="10">
     <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="%BASE_VerifyVersion%" />
@@ -39,6 +42,8 @@
   30 KOs / Channel
   => 16*30=480 KOs
   => [30,510[
+  => 24*30=720 KOs
+  => [30,750[
   -->
   <op:define prefix="DFA"
              share="../lib/OFM-DFA/src/DfaModule.share.xml"
@@ -49,25 +54,72 @@
     <op:verify File="../lib/OFM-DFA/library.json" ModuleVersion="%DFA_VerifyVersion%" />
   </op:define>
   <!-- 
-  KOs [510,990[ reserved for Channels 17..32
+  KOs [510,750[ reserved for Channels 17..24
+  KOs [750,990[ reserved for Channels 25..32 ? -> Use for FCB, as DFA16 is to large
   -->
 
   <!--
+  10 KOs / Channel
+  => 24*10=240 KOs
+  => [760,1000[
+  -->
+  <op:define prefix="FCB"
+             share="../lib/OFM-FunctionBlocks/src/FunctionBlocks.share.xml"
+             template="../lib/OFM-FunctionBlocks/src/FunctionBlocks.templ.xml"
+             NumChannels="%FCB_NumChannels%"
+             KoOffset="760"
+             ModuleType="30" >
+    <op:verify File="../lib/OFM-FunctionBlocks/library.json" ModuleVersion="%FCB_VerifyVersion%" />
+  </op:define>
+
+  <!--
   3 KOs / Channel
-  => 48*3=288 KOs (in PROD)
-  => [1000,1144[
+  => 99*3=197 KOs (in PROD)
+  => [1000,1300[
   -->
   <op:define prefix="LOG"
-             share="../lib/OFM-LogicModule/src/Logikmodul.share.xml" 
+             share="../lib/OFM-LogicModule/src/Logikmodul.share.xml"
              template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
              NumChannels="%LOG_NumChannels%"
-             KoOffset="1000" 
+             KoOffset="1000"
              ModuleType="10" >
     <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="%LOG_VerifyVersion%" />
   </op:define>
-  <!-- 
-  KOs [1148,1300[ reserved for other LOG Channels
+
+  <!--
+  1 KO / Channel
+  => 5*1=5 KOs
+  => [1300,1320[
   -->
+  <op:define prefix="BI"
+             share="../lib/OFM-BinaryInput/src/BinaryInputChannel.share.xml"
+             template="../lib/OFM-BinaryInput/src/BinaryInputChannel.templ.xml"
+             NumChannels="%BI_NumChannels%"
+             KoOffset="1300"
+             ModuleType="40">
+    <op:verify File="../lib/OFM-BinaryInput/library.json" ModuleVersion="%BI_VerifyVersion%" />
+  </op:define>
+
+  <!--
+  12 KOs / Channel
+  => 8*12=96 KOs
+  => [1310,1406[
+  -->
+  <op:define prefix="BUTTONLINK"
+             share="StateEngine.OFM-VirtualButton.link.xml"
+             noConfigTransfer="true"
+             isSubmoduleOf="BTN"
+             ModuleType="41" >
+  </op:define>
+  <op:define prefix="BTN"
+             share="../lib/OFM-VirtualButton/src/VirtualButton.share.xml"
+             template="../lib/OFM-VirtualButton/src/VirtualButton.templ.xml"
+             NumChannels="%BTN_NumChannels%"
+             KoOffset="1310"
+             ModuleType="41">
+    <op:verify File="../lib/OFM-VirtualButton/library.json" ModuleVersion="%BTN_VerifyVersion%" />
+  </op:define>
+
 
   <!-- <generate base="MyApplication.xml" /> -->
   <generate />

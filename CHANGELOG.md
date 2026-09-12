@@ -4,6 +4,48 @@
 > Dies ist aufgrund von technischen Limitationen der ETS erforderlich.
 
 
+## (UPCOMING) v0.9.0: (?)
+
+> Wichtige Update-Hinweise **nur für Nutzer der Version v0.1** Public Beta "StateEngineDFA16"
+> <details>
+>
+> Wie bereits für v0.5, v0.6, v0.7.x und v0.8.x:
+>> 1. Die Geräteadresse (PA) muss erneut zugewiesen werden, da sich das interne Speicherformat im Stack verändert hat.
+>> 2. KO-Nummern im Bereich 2 bis 19 haben sich verändert.
+>>    Ggf. vorhandene interne Referenzen müssen manuell angepasst werde.
+>>    Zur Übersicht siehe Tabelle [Änderung von zentralen Kommunikationsobjekten](#änderung-von-zentralen-kommunikationsobjekten) unten.</details>
+
+> Update Hinweis für Nutzer mit **OpenKNX REG1-Base und Version v0.6 und v0.7.x**
+> 
+> <details>Die Unterscheidung in verschiedene Firmware-Versionen entfällt, 
+> da die Zeit-Status-Anzeige nun per ETS konfiguriert werden kann.
+> Beide Verhaltensweisen können jetzt über die einheitliche Firmware `OpenKNX-REG1-Base` dargestellt werden.
+> Ausgehend von der alten Firmware wird folgendes Vorgehen zur Migration empfohlen:
+>
+> * `firmware-OpenKNX-REG1-Base___no-time-led` - hier ist *keine* gesonderte Konfiguration erforderlich
+> * `firmware-OpenKNX-REG1-Base___time-led3` - Auswahl der Funktion **Zeitstatus** in der ETS-Applikation unter OpenKNX / Info LEDs / LED "Info {1,2,3}".</details> 
+
+* Update OFM-**DFA** auf <b style="color:red;">TODO-DEV</b> (von 0.8.2; [Changes](https://github.com/OpenKNX/OFM-DFA/blob/v1/CHANGELOG.md))
+  * Refactor: Parameter-Handling
+* Ergänzung um weitere Module:
+  * 24x OFM-FunctionBlocks
+  * 8x OFM-BinaryInput
+  * 16x OFM-VirtualButton
+* Update anderer OpenKNX-Module:
+  * knx <b style="color:red;">TODO</b>
+  * OGM-**Common** auf 1.9.1 (von 1.7.2; [Changes](https://github.com/OpenKNX/OGM-Common/blob/v1/CHANGELOG.md))
+    * Korrekturen in Zeitimplementierung
+    * Persistierung auch bei Neustart über Diagnose-Kommando
+    * LED-Anzeige für unkonfigurierten Zustand
+    * <b style="color:red;">TODO 1.8 auf 1.9</b>
+  * OFM-**LogicModule** auf 4.4 (von 4.0.1; [Änderungshistorie](https://github.com/OpenKNX/OFM-LogicModule/blob/v1/doc/Applikationsbeschreibung-Logik.md#%C3%A4nderungshistorie))
+    * Neues Feature: Kanal-Sperre
+    * Erweiterung: Option zur LED-Anzeige von Rückkopplungen
+    * Fehlerkorrekturen
+    * <b style="color:red;">TODO</b>
+  * OGM-HardwareConfig auf Stand 2026-09-12
+
+
 ## v0.8.2: 2026-04-04 (Bedingter Start-Zustand + Input-/Rekonstruktions-Fixes) 
 
 > Wichtige Update-Hinweise **nur für Nutzer der Version v0.1** Public Beta "StateEngineDFA16"
@@ -24,11 +66,11 @@
 > * `firmware-OpenKNX-REG1-Base___time-led3` - Auswahl der Funktion **Zeitstatus** in der ETS-Applikation unter OpenKNX / Info LEDs / LED "Info {1,2,3}". 
 
 * **Wichtig:** Update auf OpenKNXproducer 4.0.1 erforderlich
-* Fix-Update OFM-**DFA** auf 0.8.0 (von 0.8.2; [Changes](https://github.com/OpenKNX/OFM-DFA/blob/v1/CHANGELOG.md))
+* Fix-Update OFM-**DFA** auf 0.8.2 (von 0.8.0; [Changes](https://github.com/OpenKNX/OFM-DFA/blob/v1/CHANGELOG.md))
   * Fixes Eingänge
     * Fix: *Bestehendes KO* nutzte falsche KO-Nummer
     * Fix: *Eingang Symbol T* funktionierte nicht (oder fehlerhaft) über KO
-  * Fixes: Rekonstruktiosfunktion
+  * Fixes: Rekonstruktionsfunktion
     * Fix: Es hätte ein falscher Rest-Timeout rekonstuiert werden können, nach Shutdown fast zeitgleich zum Ende
     * Fix: Verhalten bei zuvor inaktiven Kanälen in Verbindung mit Pausieren 
 

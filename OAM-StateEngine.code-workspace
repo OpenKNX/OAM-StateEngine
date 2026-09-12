@@ -7,7 +7,16 @@
 			"path": "../OFM-DFA"
 		},
 		{
+			"path": "../OFM-FunctionBlocks"
+		},
+		{
 			"path": "../OFM-LogicModule"
+		},
+		{
+			"path": "../OFM-VirtualButton"
+		},
+		{
+			"path": "../OFM-BinaryInput"
 		},
 		{
 			"path": "../OFM-ConfigTransfer"
